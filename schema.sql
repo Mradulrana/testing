@@ -28,9 +28,11 @@ CREATE TYPE public.user_role AS ENUM (
 );
 
 CREATE TYPE public.property_type AS ENUM (
-  'plot',
-  'land',
-  'house'
+  'Apartment',
+  'House',
+  'Villa',
+  'Plot',
+  'Commercial'
 );
 
 CREATE TYPE public.media_type AS ENUM (
@@ -78,25 +80,30 @@ CREATE TABLE public.properties (
     ON DELETE CASCADE,
 
   title TEXT NOT NULL,
-
   description TEXT DEFAULT '',
-
-  property_type public.property_type
-    NOT NULL,
-
+  property_type public.property_type NOT NULL,
   price NUMERIC NOT NULL,
-
   location TEXT NOT NULL,
-
+  neighborhood TEXT,
+  address TEXT,
   area_size NUMERIC NOT NULL,
+  currency TEXT DEFAULT 'USD',
+  price_per_sqft NUMERIC,
+  status TEXT DEFAULT 'For Sale',
+  bedrooms INTEGER DEFAULT 0,
+  bathrooms INTEGER DEFAULT 0,
+  images TEXT[] DEFAULT '{}',
 
-  created_at TIMESTAMPTZ
-    NOT NULL
-    DEFAULT NOW(),
+  furnishing TEXT DEFAULT 'Unfurnished',
+  is_verified BOOLEAN DEFAULT false,
+  agent_name TEXT DEFAULT 'Owner',
+  agent_company TEXT DEFAULT 'ZameenMarket',
+  agent_phone TEXT,
+  amenities TEXT[] DEFAULT '{}',
+  video_url TEXT,
 
-  updated_at TIMESTAMPTZ
-    NOT NULL
-    DEFAULT NOW()
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 -- =========================================

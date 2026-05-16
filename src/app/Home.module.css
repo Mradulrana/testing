@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.featuredSection {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  width: 100%;
+  background-color: var(--white); /* Updated background color to complement cards */
+}
+
+@media (min-width: 640px) {
+  .featuredSection {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .featuredSection {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.sectionSubtitle {
+  color: var(--gray-600);
+  margin-top: 0.25rem;
+}
+
+.viewAllLink {
+  display: none;
+  color: var(--blue-600);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.viewAllLink:hover {
+  color: var(--blue-700);
+}
+
+@media (min-width: 640px) {
+  .viewAllLink {
+    display: block;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* Updated to 3 columns to better fit column-oriented cards */
+  }
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--gray-50);
+  border-radius: 0.5rem;
+}
+
+.emptyStateText {
+  color: var(--gray-500);
+}
+
+.mobileViewAll {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .mobileViewAll {
+    display: none;
+  }
+}

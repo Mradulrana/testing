@@ -1,0 +1,357 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--gray-50);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.bgDecoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(37, 99, 235, 0.05); /* blue-600/5 */
+  transform: skewY(-6deg);
+  transform-origin: top left;
+  z-index: 0;
+}
+
+.header {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 28rem;
+  position: relative;
+  z-index: 10;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--blue-600);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
+}
+
+.logoIcon svg {
+  color: var(--white);
+}
+
+.logoText {
+  font-weight: 700;
+  font-size: 1.875rem;
+  color: var(--gray-900);
+  letter-spacing: -0.025em;
+}
+
+.logoHighlight {
+  color: var(--blue-600);
+}
+
+.title {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--gray-900);
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.formContainer {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 28rem;
+}
+
+.formCard {
+  background-color: var(--white);
+  padding: 2rem 1rem;
+  box-shadow: 0 20px 25px -5px rgba(229, 231, 235, 0.5), 0 10px 10px -5px rgba(229, 231, 235, 0.5); /* shadow-gray-200/50 */
+  border: 1px solid var(--gray-100);
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .formCard {
+    border-radius: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.tabs {
+  display: flex;
+  background-color: var(--gray-100);
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.625rem 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.tabActive {
+  background-color: var(--white);
+  color: var(--gray-900);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.tabInactive {
+  color: var(--gray-500);
+}
+
+.tabInactive:hover {
+  color: var(--gray-700);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  margin-bottom: 0.25rem;
+}
+
+.inputWrapper {
+  position: relative;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.inputIcon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding-left: 0.75rem;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--gray-400);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding-left: 2.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 0.75rem;
+  background-color: var(--gray-50);
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  background-color: var(--white);
+  outline: none;
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 1px var(--blue-500);
+}
+
+.formOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  height: 1rem;
+  width: 1rem;
+  color: var(--blue-600);
+  border-color: var(--gray-300);
+  border-radius: 0.25rem;
+}
+
+.checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-500);
+}
+
+.checkboxLabel {
+  margin-left: 0.5rem;
+  display: block;
+  font-size: 0.875rem;
+  color: var(--gray-900);
+}
+
+.forgotPassword {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--blue-600);
+}
+
+.forgotPassword:hover {
+  color: var(--blue-500);
+}
+
+.submitBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--blue-600);
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: var(--blue-700);
+}
+
+.submitBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-500);
+}
+
+.divider {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.dividerLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.dividerLineInner {
+  width: 100%;
+  border-top: 1px solid var(--gray-200);
+}
+
+.dividerText {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 0.875rem;
+}
+
+.dividerTextInner {
+  padding: 0 0.5rem;
+  background-color: var(--white);
+  color: var(--gray-500);
+}
+
+.socialAuth {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.75rem;
+}
+
+.socialBtn {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  transition: background-color 0.2s;
+}
+
+.socialBtn:hover {
+  background-color: var(--gray-50);
+}
+
+.socialIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.socialIconBlue {
+  color: var(--blue-600);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
